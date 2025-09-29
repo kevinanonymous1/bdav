@@ -1,0 +1,41 @@
+Steps in Pig
+
+1) Go to Local Terminal
+2) create a txt file with Data:-
+1,2,3
+2,3,4
+1,2,5
+3,4,5
+5,6,7
+3,2,2
+3)create Directory in Hadoop
+- Hadoop fs -mkdir /pinput
+- Hadoop fs -put pigdata.txt /pinput
+- Hadoop fs- ls /pinput
+4)Grunt > dat = Load '/pinput/pigdata.txt' using pigstorage(',') as (a1:int,a2:int,a3:int);
+5)Grunt > dump dat ;
+
+Q1) Display distinct  data:-
+
+result = DISTINCT dat;
+dump result;
+
+Q2) Display only those rows where a3 = 4 (Filteration)
+result = Filter data by a3=4;
+dump result
+
+Q3)Display Only First Two Columns
+FeResult = FOREACH dat generate a1,a2;
+dump feResult
+
+Q4)Group by
+grpname = GROUP edata by ename;
+dump grpname;
+
+Q5)Display only 3 records ( LIMIT)
+ltresult = LIMIT edata 3;
+dump result
+
+Q6)Display records in ascending and descending order
+aresult = ORDER empdata by enamel
+dump result 

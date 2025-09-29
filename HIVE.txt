@@ -1,0 +1,98 @@
+Hive Commands and Steps
+Create a table user in Hive with userId, username, and salary.
+
+sudo -u hdfs hdfs dfsadmin -safemode leave
+
+Steps to create table & load data using Hive:
+
+Step 1: go to Cloudera & open one terminal.
+Step 2: go to hive shell by using a command:
+hive
+Step 3: create a table in hive shell.
+Step 4: Open another Terminal (local environment).
+Step 5: Create any text file at local side.
+Step 6: load data to hive shell & load data (txt file) into hive table.
+Step 7: display table data by using select query.
+1) load data local inpath '/home/cloudera/tab.txt' overwrite into table employee;
+Step 8: select query using hive.
+Now hive? select * from employee;
+
+Commands:
+select * from employee where salary > 25000;
+
+select * from employee order by salary;
+
+select salary, count(*) from employee group by salary;
+
+select sum(salary) from employee;
+
+select sum(distinct salary) from employee;
+
+select avg(salary) from employee;
+
+select avg(distinct salary) from emp... (The rest is cut off)
+
+Select max(Salary) from employee;
+
+Select min(Salary) from employee;
+
+Creating View
+create view emp_01 as select * from emp where salary > 25000;
+
+select * from emp_01;
+
+Partition
+In Hive, to create a partition:
+
+Step 1: create table with the following fields:
+1) user id int, std id int, sname string, city string
+
+Load data into table with help of .txt file.
+
+We create a partition on the basis of city.
+
+How I can check your table in Hive Warehouse.
+
+Create partition on city:
+create table std_part(sid int, sname string) partitioned by (city string);
+
+Insert data into partition:
+Insert into table std_part partition (city='Mumbai') select sid, sname from std where city = 'Mumbai';
+
+select * from std_part;
+
+Here is the content of the third image in text format:
+
+Hive Tables
+There are two types of Hive Table:
+
+Internal Table
+
+External Table
+
+Create table in hive as First & Second:
+
+Internal table
+
+External table
+
+Create Table Internal Table
+SQL
+
+Create table internal_table
+(sno int, sname string, location string)
+row format delimited
+fields terminated by ',,'
+lines terminated by '\n'
+stored as textfile;
+load data local inpath '/home/cloudera/external.txt' overwrites into table external_table;
+
+Check the location of the table:
+show create table internal_table;
+hadoop fs -ls "/user/hive/warehouse" (for internal)
+
+Create External Table
+Create external table external_table
+...rest same (The structure/schema is implied to be similar to the internal table definition above, but with the keyword EXTERNAL)
+
+External table will be deleted in Shell but still exist in Warehouse & will not be deleted completely.
