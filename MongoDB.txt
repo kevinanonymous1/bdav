@@ -1,0 +1,75 @@
+Database Management:
+
+
+Show Databases: show dbs 
+
+
+Switch Database: use teacher 
+
+
+Drop Database: db.dropDatabase() 
+
+Collection Management:
+
+
+Show Collections: show collections 
+
+
+Create Collection: db.createCollection("book") 
+
+
+Drop Collection: db.employee.drop() 
+
+CRUD Operations:
+
+
+Insert: db.book.insert({"b_id":33, "b_language":"English", "author":"xyz", "edition":"first"}) 
+
+
+Find (Select All): db.employee.find() 
+
+
+Find (Pretty Print): db.employee.find({"id": {$lt:50}}).pretty() 
+
+
+Find One: db.book.findOne({"edition":"first"}) 
+
+
+Update: db.employee.update({"firstname": "Tom"}, {$set:{"firstname": "Jerry"}}) 
+
+
+Update Multi: db.employee.update({"firstname":"Tom"}, {$set:{"firstname": "Scooby"}}, {multi:true}) 
+
+
+Remove (Delete): db.employee.remove({"id":78}) 
+
+Query Operators:
+
+
+Less than: db.employee.find({"id":{$lt:50}}).pretty() 
+
+
+Greater than: db.employee.find({"id":{$gt:50}}).pretty() 
+
+
+In Array: db.employee.find({"firstname": {$in:["Tom", "Eva","Ginger"]}}).pretty() 
+
+
+Not in Array: db.employee.find({"firstname": {$nin:["Tom","Eva","Ginger"]}}).pretty() 
+
+
+Not Equal: db.employee.find({"id":{$ne:50}}).pretty() 
+
+Aggregation & Sorting:
+
+
+Sort (Ascending): db.employee.find().sort({"id":1}) 
+
+
+Sort (Descending): db.employee.find().sort({"id":-1}) 
+
+
+Group/Sum: db.employee.aggregate([{$group:{_id:"$region",age_s:{$sum:"$age"}}}]) 
+
+
+Limit: db.employee.find({"userId":"rirani"}).limit(2)
