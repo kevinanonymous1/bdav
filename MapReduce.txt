@@ -1,0 +1,19 @@
+Word Count Execution:
+
+hadoop jar WordCount.jar WordCount /idata/word.txt /output1.txt 
+
+Union Operation Execution:
+
+hadoop jar Union.jar Union /user/cloudera/inputfile/SetA.txt /user/cloudera/inputfile/SetB.txt /output_union 
+
+Intersection Execution:
+
+hadoop jar Difference1.jar Difference1 /user/cloudera/inputfile/setA.txt /user/cloudera/inputfile/setB.txt /output_diff1 
+
+Grouping and Aggregation Execution:
+
+hadoop jar AVG.jar AvgGroup /user/cloudera/inputfile/Titanic.txt /outputAvg 
+
+Matrix Multiplication Execution:
+
+hadoop jar Matrix.jar Matrix /user/cloudera/inputfile/final.txt /output_59
