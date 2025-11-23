@@ -1,0 +1,33 @@
+DDL (Data Definition):
+
+
+Create Table: CREATE TABLE empy(eid int, name String, Salary String) ... STORED AS TEXTFILE; 
+
+
+Rename Table: Alter table empy rename to Employee; 
+
+
+Change Column Type: Alter table Employee change Salary Salary double; 
+
+DML (Data Manipulation):
+
+
+Load Data: load data local inpath '/home/cloudera/data.txt' overwrite into table empy; 
+
+
+Select All: Select * from empy; 
+
+
+Where Clause: Select * from Employee where Salary > 10000; 
+
+
+Order By: Select * from Employee order by Salary; 
+
+
+Group By/Count: Select Salary, count(*) from Employee group by Salary; 
+
+
+Joins: Select c.cust_id... from customer c LEFT OUTER JOIN order o on(c.cust_id=o.customer_id); 
+
+
+Aggregates: Select min(salary) from customer;
