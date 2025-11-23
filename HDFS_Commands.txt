@@ -1,0 +1,69 @@
+Create Directory:
+
+
+hadoop fs -mkdir /user/cloudera/thursday 
+
+Create Empty File:
+
+
+hadoop fs -touchz /user/cloudera/thursday/sample.txt 
+
+Copy from Local to HDFS:
+
+
+hadoop fs -copyFromLocal local.txt /user/cloudera/thursday 
+
+Put (Copy from Local alternative):
+
+
+hadoop fs -put /home/cloudera/putfile.txt /user/cloudera/thursday 
+
+Copy to Local:
+
+
+hadoop fs -copyToLocal /user/cloudera/sunio/cplocal.txt /home/cloudera/sunil 
+
+Get (Copy to Local alternative):
+
+
+hadoop fs -get /user/cloudera/sunio/getfile.txt /home/cloudera/sunil 
+
+Move from Local:
+
+
+hadoop fs -moveFromLocal /home/cloudera/sunil/mvfromlocal.txt /user/cloudera/sunio 
+
+Copy within HDFS:
+
+
+hadoop fs -cp /user/cloudera/sunio/cplocal.txt /user/cloudera/thursday 
+
+Recursive Delete:
+
+
+hadoop fs -rmr /user/cloudera/thursday 
+
+Disk Usage (Per file):
+
+
+hadoop fs -du /user/cloudera/sunio 
+
+Disk Usage Summary:
+
+
+hadoop fs -dus /user/cloudera/sunio 
+
+File Status/Time:
+
+
+hadoop fs -stat /user/cloudera/sunio 
+
+List Files:
+
+
+hadoop fs ls /user/cloudera/thursday 
+
+Read File Content:
+
+
+hadoop fs -cat /output1/part-r-00000
