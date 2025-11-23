@@ -1,0 +1,38 @@
+Pig
+Aim: Data flow scripting.
+
+
+Load Data: data = LOAD '/user/cloudera/piginput/pigfile.txt' USING PigStorage(',') AS (A1:int, A2:int, A3:int); 
+
+
+Output Data: dump data; 
+
+
+Remove Duplicates: result = DISTINCT data; 
+
+
+Filter: fltresult= FILTER data BY A3==4; 
+
+
+Select Columns: feresult= FOREACH data generate A1,A2; 
+
+
+Group: grpname= GROUP student BY name; 
+
+
+Limit: lmtresult = LIMIT student 2; 
+
+
+Order: ascresult = ORDER student BY name; 
+
+
+Aggregates: avgres= FOREACH groupname generate student.name, AVG(student.Grade); 
+
+
+String Size: sizeres = FOREACH student generate SIZE(name); 
+
+
+Join (Cross Product): Crossresult= CROSS matrixA, matrixB; 
+
+
+Math Functions: cbresult= FOREACH CB GENERATE CBRT(c1);
