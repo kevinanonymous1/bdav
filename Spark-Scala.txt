@@ -1,0 +1,54 @@
+Spark (Scala Mode)
+Aim: In-memory data processing using Scala.
+
+
+Initialization: var a=10 
+
+
+Create RDD (Parallelize): val b=sc.parallelize(a); 
+
+
+Create RDD (File): val n1=sc.textFile("file:/home/cloudera/number.txt"); 
+
+Actions:
+
+
+Collect: n1.collect(); 
+
+
+Count: n1.count(); 
+
+
+First: n1.first(); 
+
+
+Take: n1.take(5); 
+
+Transformations:
+
+
+Map: val mapt=y.map(x=>x+5); 
+
+
+Distinct: val dt=data.distinct(); 
+
+
+Union: val undata=data.union(data1); 
+
+
+Intersection: val interdata=data.intersection(data1); 
+
+
+Cartesian: val cartdata=data.cartesian(data1); 
+
+
+SortByKey: val sortdata=sdata.sortByKey(); 
+
+
+GroupByKey: val grpdata=sdata.groupByKey(); 
+
+
+FlatMap: val splitdata=namefile.flatMap(line=>line.split(" ")); 
+
+
+ReduceByKey: val result=cword.reduceByKey(_+_);
